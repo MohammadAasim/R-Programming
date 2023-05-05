@@ -1,0 +1,51 @@
+---
+title: "Sales Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+library(dplyr)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Histogram
+
+```{r}
+hist(mtcars$mpg,
+     col='steelblue',
+     main='Histogram',
+     xlab='mpg',
+     ylab='Frequency')
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Box Plot
+
+```{r}
+boxplot(mtcars$mpg,
+        main='Distribution of mpg values',
+        ylab='mpg',
+        col='steelblue',
+        border='black')
+```
+
+### Scatter Plot
+
+```{r}
+plot(mtcars$mpg, mtcars$wt,
+     col='steelblue',
+     main='Scatterplot',
+     xlab='mpg',
+     ylab='wt',
+     pch=19)
+```
+

@@ -1,0 +1,16 @@
+install.packages("pdftools", dep=T)
+install.packages("wordcloud", dep=T)
+install.packages("tm", dep=T)
+library(pdftools)
+library(wordcloud)
+library(tm)
+data<-read.csv(file.choose())
+data<- read.csv(file.choose())
+str(data)
+View(data)
+??tm
+data$type <- factor(data$type)
+table(data$type)
+data$text
+sms_corpus <- VCorpus(VectorSource(data$text))
+print(sms_corpus)
